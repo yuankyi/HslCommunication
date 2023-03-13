@@ -1,0 +1,842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3D7ACC4C-58D5-4CA6-85F9-6C025D875FBA}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <LangVersion>4</LangVersion>
+    <AssemblyName>HslCommunicationDemo</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HslCommunication">
+      <HintPath>..\..\..\..\download\HslCommunication-master\HslCommunication-master\Download\HslCommunicationDemo\HslCommunicationDemo-20230313\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <HintPath>C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\System.Xml.Linq\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="HslControls">
+      <HintPath>..\..\..\..\download\HslCommunication-master\HslCommunication-master\Download\HslCommunicationDemo\HslCommunicationDemo-20230313\HslControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking.ThemeVS2015">
+      <HintPath>..\..\..\..\download\HslCommunication-master\HslCommunication-master\Download\HslCommunicationDemo\HslCommunicationDemo-20230313\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\..\..\..\download\HslCommunication-master\HslCommunication-master\Download\HslCommunicationDemo\HslCommunicationDemo-20230313\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>C:\WINDOWS\Microsoft.NET\assembly\GAC_MSIL\System.Net.Http\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HslCommunicationDemo.Algorithms\FormConnectPool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Algorithms\FormPid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Algorithms\FourierFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Algorithms\FourierTransform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Algorithms\SiemensConnector.cs" />
+    <Compile Include="HslCommunicationDemo.BarCode\FormSickBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Control\FormInputString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Control\FormPipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\DeviceSupportList.cs" />
+    <Compile Include="HslCommunicationDemo.DemoControl\FormCurveMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\FormDeviceSupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\FormLogRender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\FormMqttInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\FormPanelLeft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\FormSaveList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\UserControlCurve.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\UserControlHead.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\UserControlReadWriteOp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\UserControlReadWriteServer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.DemoControl\UserControlsSourceByteRead.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.HslDebug\FormCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.HslDebug\FormHandShake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.HslDebug\FormMessageCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.HslDebug\FormRegexTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.HslDebug\MessgaeCreate.cs" />
+    <Compile Include="HslCommunicationDemo.Light\FormShineInLight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.MQTT\FormMqttRpcDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.MQTT\FormMqttSubscribe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.MQTT\FormWillTopicSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.PLC.Secs\FormSecsHsmsServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.PLC\FormKnx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.PLC\my_modbus_server.cs" />
+    <Compile Include="HslCommunicationDemo.Properties\Resources.cs" />
+    <Compile Include="HslCommunicationDemo.Properties\Settings.cs" />
+    <Compile Include="HslCommunicationDemo.Redis\FormRedisCopy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Redis\FormRedisInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Redis\RedisBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Robot\FormABBWebApi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Robot\FormEfort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Robot\FormEfortPrevious.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Robot\FormEstunTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Robot\FormFanucRobot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Robot\FormHyundaiUdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Robot\FormYamahaRCX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Toledo\FormToledoSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Toledo\FormToledoTcpServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo.Toledo\ToledoDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\ClientSession.cs" />
+    <Compile Include="HslCommunicationDemo\dataMy.cs" />
+    <Compile Include="HslCommunicationDemo\DemoDeviceList.cs" />
+    <Compile Include="HslCommunicationDemo\DemoUtils.cs" />
+    <Compile Include="HslCommunicationDemo\FormAbbServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormAllenBradleyDF1Serial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormAllenBrandly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormAllenBrandlyBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormAllenBrandlyConnectedCip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormAllenBrandlyMicroCip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormAllenBrandlyPCCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormAllenBrandlySLC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormBasicControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormBeckhoffAdsNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormBeckhoffAdsServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormByteTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormCipServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormCJT188.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormCJT188OverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormCncFanuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormComplexNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormCurve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDAM3601.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDcsNanJingAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDeltaDvpSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDeltaDvpSerialAscii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDeltaDvpTcpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDeltaSerialAsciiOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDeltaSerialOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDigitronCPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDigitronCPLOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDigitronCPLServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDisclaimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDLT645.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDLT645OverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDLT645With1997.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDLT645With1997OverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDLT698.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDLT698OverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDLT698TcpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDTSU6606.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormDtuServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFanucRobotServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFatekPrograme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFatekProgrameOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFatekProgrameServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFetchWriteServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFileClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFreedomSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFreedomTcpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFreedomUdpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFujiCSTNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFujiCSTServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFujiSPB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFujiSPBOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFujiSPBServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFujiSPHNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFujiSPHServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormFxLinksServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormGauge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormGeSRTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormGeSRTPServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormHslCertificate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormHslMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormHttpClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormHttpServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormIEC104.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormInovanceSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormInovanceSerialOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormInovanceTcpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormInputAlien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKeyenceAscii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKeyenceBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKeyenceDLEN1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKeyenceNanoSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKeyenceNanoSerialOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKeyenceNanoServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKeyenceSR2000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKuka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormKukaTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLogNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLsisCnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLsisCnetOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLsisFEnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLSisServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLsisXGKCnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormLsisXGKFEnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMcA1EServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMcA3CServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMcServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMcUdpServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMegMeetSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMegMeetSerialOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMegMeetTcpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsec1EAscii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsec1EBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsec3C.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsec3COverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecAscii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecAsciiUdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecCipNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecLinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecLinksOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecRBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecSerialOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMelsecUdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMemobusTcpServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormModbus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormModbusAlien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormModbusAscii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormModbusAsciiOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormModbusRtu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormModbusRtuOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormModbusServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormModbusUdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMqttClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMqttFileClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMqttFileServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMqttServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormMqttSyncClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormNewVerison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronCip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronConnectedCip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronHostLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronHostLinkCMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronHostLinkCModeOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronHostLinkCModeServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronHostLinkOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronHostLinkServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronUdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOmronUdpServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormOpenProtocol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormPanasonicBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormPanasonicMew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormPanasonicMewOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormPanasonicMewtocolServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormPcccServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormPieChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormPlainSocket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormPushNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormRedisClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormRedisSubscribe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormRkcTemperatureController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormRkcTemperatureControllerOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormRSADebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormS7Server.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSAMSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSAMTcpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSecsGem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSeqCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSerialDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSerialToTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemens200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensDTU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensFW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensMPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensPPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensPPIOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensPPIServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensS1200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensS1500.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensS200.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensS200Smart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensS300.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensS400.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSiemensWebApi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSimplifyNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormSimplifyNetAlien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormTcpDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormTcpServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormTcpToTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormTrustedClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormTurckReaderNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormTurckReaderServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormUdpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormUpdateServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormVibrationSensorClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormVigorSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormVigorSerialOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormVigorServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormWebsocketClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormWebsocketQANet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormWebsocketServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormXinJEInternalServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormXinJEInternalTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormXinJESerialOverTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormXinJETcpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormXinJEXCSerial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormYASKAWAMemobusTcpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormYASKAWAMemobusUdpNet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormYokogawaLinkServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormYokogawaLinkTcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormYRC1000.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\FormYRCHighEthernet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\HslFormContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HslCommunicationDemo\OpenMessage.cs" />
+    <Compile Include="HslCommunicationDemo\Program.cs" />
+    <Compile Include="HslCommunicationDemo\Settings1.cs" />
+    <Compile Include="HslCommunicationDemo\UserType.cs" />
+    <Compile Include="HslCommunicationDemo\UserWebApis.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HslCommunicationDemo.Properties\Resources.resx" />
+    <EmbeddedResource Include="HslCommunicationDemo\FormBasicControl.resx" />
+    <EmbeddedResource Include="HslCommunicationDemo\FormMain.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
